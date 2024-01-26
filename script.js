@@ -211,7 +211,7 @@ function DisplayWeapon(weapon){
     document.querySelector("#charge").innerText = weapon.charge != null ? weapon.charge : "";
 
     //history
-    document.querySelector("#history").innerHTML += `
+    document.querySelector("#history").innerHTML += `<div>
     <p id="class">${weapon.className}</p>
     <p id="weapon">${weapon.type}</p>
     <p id="charge">${weapon.charge != null ? weapon.charge : ""}</p>
@@ -226,7 +226,7 @@ function DisplayWeapon(weapon){
         document.querySelector("#history").innerHTML += `<li>${element}</li>`;
     });
     document.querySelector("#history").innerHTML += 
-    `</ul> <br />`
+    `</ul> </div> <br />`
 }
 
 function GetRandom(value){
@@ -256,7 +256,7 @@ function GetWeaponBuffs(weaponType){
     } else if (weaponType === 'Thrown') {
         return [...DmgPos, ...BuffPos];
     } else if (weaponType === 'Melee') {
-        return [...DmgPos, ...BuffPos];
+        return [...DmgPos, ...BuffPos, ...MeleePos];
     } else if (weaponType === 'Rocket') {
         return [...DmgPos, ...ClipPos, ...BuffPos];
     } else if (weaponType === 'Banner') {
@@ -319,7 +319,7 @@ function GetWeaponDebuffs(weaponType) {
     } else if (weaponType === 'Thrown') {
         return [...DmgNeg, ...BuffNeg];
     } else if (weaponType === 'Melee') {
-        return [...DmgNeg, ...BuffNeg];
+        return [...DmgNeg, ...BuffNeg, ...MeleeNeg];
     } else if (weaponType === 'Rocket') {
         return [...DmgNeg, ...ClipNeg, ...BuffNeg];
     } else if (weaponType === 'Banner') {
