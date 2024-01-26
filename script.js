@@ -298,7 +298,7 @@ function GetWeaponBuffs(weaponType){
     } else if (weaponType === 'Revolver') {
         return [...DmgPos, ...ClipPos, ...BuffPos];
     } else if (weaponType === 'Knife') {
-        return [...DmgPos, ...BuffPos];
+        return [...DmgPos, ...BuffPos, ...MeleePos];
     } else if (weaponType === 'Watch') {
         return [...BuffPos];
     } else if (weaponType === 'Sapper') {
@@ -361,7 +361,7 @@ function GetWeaponDebuffs(weaponType) {
     } else if (weaponType === 'Revolver') {
         return [...DmgNeg, ...ClipNeg, ...BuffNeg];
     } else if (weaponType === 'Knife') {
-        return [...DmgNeg, ...BuffNeg];
+        return [...DmgNeg, ...BuffNeg, ...MeleeNeg];
     } else if (weaponType === 'Watch') {
         return [...BuffNeg];
     } else if (weaponType === 'Sapper') {
